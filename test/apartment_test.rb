@@ -26,4 +26,8 @@ class ApartmentTest < Minitest::Test
   def test_it_has_bedrooms
     assert_equal 1, @unit1.bedrooms
   end
+
+  def test_it_has_a_renter
+    assert_nil nil, @unit1.renter
+  end
 end
