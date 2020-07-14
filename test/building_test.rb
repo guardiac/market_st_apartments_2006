@@ -16,4 +16,8 @@ class BuildingTest < Minitest::Test
   def test_it_has_units
     assert_equal [], @building.units
   end
+
+  def test_it_has_renters
+    assert_equal [], @building.renters
+  end
 end
