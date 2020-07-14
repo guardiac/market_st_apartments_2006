@@ -14,4 +14,8 @@ class Building
       unit.renter.name if unit.renter
     end.compact
   end
+
+  def average_rent
+    ((@units.sum { |unit| unit.monthly_rent }) / @units.length.to_f).round(1)
+  end
 end
