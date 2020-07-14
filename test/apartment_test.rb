@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/apartment'
+require './lib/renter'
 
 class ApartmentTest < Minitest::Test
   def setup
@@ -29,5 +30,12 @@ class ApartmentTest < Minitest::Test
 
   def test_it_has_a_renter
     assert_nil nil, @unit1.renter
+  end
+
+  def test_it_can_add_a_renter
+    renter1 = Renter.new("Jessie")
+    @unit1.add_renter(renter1)
+
+    assert_instance_of Renter, @unit1.renter
   end
 end
