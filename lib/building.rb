@@ -18,4 +18,10 @@ class Building
   def average_rent
     ((@units.sum { |unit| unit.monthly_rent }) / @units.length.to_f).round(1)
   end
+
+  def rented_units
+    @units.find_all do |unit|
+      unit.renter
+    end
+  end
 end
