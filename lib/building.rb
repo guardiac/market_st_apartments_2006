@@ -30,4 +30,19 @@ class Building
       unit.monthly_rent
     end.renter
   end
+
+  def units_by_number_of_bedrooms
+    new_hash = Hash.new([])
+    unit_objs = @units.group_by do |unit|
+      unit.bedrooms
+    end
+
+    unit_objs.each do |bedroom, units|
+      units.each do |unit|
+        new_hash[bedroom] << unit.number
+      end
+    end
+
+    new_hash
+  end
 end
